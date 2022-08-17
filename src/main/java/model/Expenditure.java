@@ -18,7 +18,8 @@ public class Expenditure {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @OneToOne
+    @ManyToOne
+    @JoinColumn(name = "category_id")
     private Category category;
     private BigDecimal count;
     private LocalDate date;
